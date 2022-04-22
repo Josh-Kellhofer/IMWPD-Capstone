@@ -1,0 +1,13 @@
+.search {
+  position: center; 
+  top: 2rem; 
+  left: 50%;
+  /* transform: translateX(-50%); */
+  width: 100%; 
+  
+  max-width: 400px; 
+  z-index: 10;  
+  margin-left: 1000px;
+  border-style: solid;
+  border-color: Red;
+}

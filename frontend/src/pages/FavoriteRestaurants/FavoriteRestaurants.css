@@ -1,0 +1,27 @@
+.main-container {
+  border-style: transparent;
+  margin-top: 200px;
+  ;
+}
+
+
+.favorite-restaurants-head {
+  border-style: solid;
+  border-color: transparent;
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+  margin: 50px;
+}
+
+ .favorites-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 000 1000px rgba(0,0,0,0.2);
+  object-fit: contain;
+  background-size: cover;
+} 

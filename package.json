@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@reach/combobox": "^0.16.5",
+    "date-fns": "^2.28.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
+    "use-places-autocomplete": "^2.0.0"
+  }
+}
