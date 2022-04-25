@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 
+// import video from "./Vid.mp4"
+
 
 function VideoPlayer() {
   return (
     <div>
-      <ReactPlayer url='https://www.youtube.com/watch?v=9boMnm5X9ak' />
+      {/* <ReactPlayer controls url={video} width="100%" height="100%" playing /> */}
     </div>
   )
 }
+
+export default VideoPlayer;

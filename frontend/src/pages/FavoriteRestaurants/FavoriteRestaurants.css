@@ -12,6 +12,7 @@
   text-align: center;
   padding: 20px;
   margin: 50px;
+  color: white;
 }
 
  .favorites-container {
@@ -24,4 +25,5 @@
   box-shadow: inset 000 1000px rgba(0,0,0,0.2);
   object-fit: contain;
   background-size: cover;
+  color: white;
 } 

@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../Button";
 import "./RestaurantApp.css";
 import { randomArrayShuffle } from '../ArrayShuffler/ArrayShuffler'
+import { Link } from "react-router-dom";
 
 function RestaurantApp({ restaurants, favoriteRestaurants, RemoveFavoriteRestaurant, AddFavoriteRestaurant }) {
 
@@ -22,6 +23,7 @@ function RestaurantApp({ restaurants, favoriteRestaurants, RemoveFavoriteRestaur
         <td>{restaurant.rating}</td>
         <td>{FormatOpenNow(restaurant.opening_hours?.open_now)}</td>
         <td>{restaurant.formatted_address}</td>
+        <td><Link to={`/reviews/${restaurant.place_id}`}>Review </Link></td>
         <td className=""><a href={restaurant.url}>Click for Website</a></td>
         <td><input type="checkbox" checked={isFavorite} onChange={() => 
         isFavorite? RemoveFavoriteRestaurant(restaurant): AddFavoriteRestaurant(restaurant)
@@ -107,6 +109,7 @@ function RestaurantApp({ restaurants, favoriteRestaurants, RemoveFavoriteRestaur
                   <th>Rating</th>
                   <th>Open</th>
                   <th>Address</th>
+                  <th>Reviews</th>
                   <th>Website</th>
                   <th>Like</th>
                 

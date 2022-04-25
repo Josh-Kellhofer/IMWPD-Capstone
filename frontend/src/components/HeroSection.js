@@ -22,10 +22,10 @@ function HeroSection() {
           GET STARTED
           
         </ButtonLink>
-        <Button className='btns' buttonStyle='btn--primary'
-        buttonSize='btn--large' >
+        <ButtonLink className='btns' buttonStyle='btn--primary'
+        buttonSize='btn--large' pathname='/videopage'>
           INTRO VIDEO<i className='far fa-play-circle' />
-        </Button>
+        </ButtonLink>
        
       </div>
     </div>

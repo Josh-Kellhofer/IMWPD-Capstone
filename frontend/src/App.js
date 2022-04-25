@@ -16,6 +16,8 @@ import Home from "./components/DisplayPages/Home";
 import RestaurantApp from "./components/DisplayPages/RestaurantApp";
 import Randomizer from "./components/DisplayPages/Randomizer";
 import FavoritedRestaurants from "./pages/FavoriteRestaurants/FavoriteRestaurants";
+import VideoPage from "./pages/VideoPage/VideoPage";
+import RestaurantReviews from "./components/RestaurantReviews/RestaurantReviews";
 
 // Component Imports
 // import Navbar from "./components/NavBar/NavBar";
@@ -34,10 +36,11 @@ function App() {
   const [geolocation, setGeolocation] = useState(null);
   const [locationReceived, setLocationReceived] = useState(false);
   const [restaurants, setRestaurants] = useState([]);
-  const [favoriteRestaurants, setFavoriteRestaurants] = useState([]);
+  const [favoriteRestaurants, setFavoriteRestaurants] = useState(JSON.parse(localStorage.getItem("favoriteRestaurants")) || []);
 
   function AddFavoriteRestaurant(restaurant) {
     setFavoriteRestaurants([...favoriteRestaurants, restaurant]);
+    localStorage.setItem("favoriteRestaurants", JSON.stringify([...favoriteRestaurants, restaurant]))
     console.log("Favorite Rest", favoriteRestaurants)
   }
 
@@ -50,6 +53,8 @@ function App() {
       ...favoriteRestaurants.slice(0, restaurantidx),
       ...favoriteRestaurants.slice(restaurantidx + 1),
     ]);
+    localStorage.setItem("favoriteRestaurants", JSON.stringify([...favoriteRestaurants.slice(0, restaurantidx),
+      ...favoriteRestaurants.slice(restaurantidx + 1)]))
   }
 
   useEffect(() => {
@@ -137,8 +142,15 @@ function App() {
           />
           <Route
             path="/FavoriteRestaurants"
-            element={<FavoritedRestaurants />}
+            element={<FavoritedRestaurants favoriteRestaurants={favoriteRestaurants}/>}
           />
+          <Route
+            path="videopage"
+            element={<VideoPage />}
+            />
+            <Route
+            path="/reviews/:place_id"
+            element={<RestaurantReviews restaurants={restaurants || []} />} />
           <Route path="/register" element={<RegisterPage />} />
           {/* <Route path="/login" element={<LoginPage />} /> */}
           <Route
