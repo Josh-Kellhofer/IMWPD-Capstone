@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import "./RestaurantReviews.css"
 
 function RestaurantReviews ({restaurants}) {
   const {place_id}=useParams()
@@ -19,26 +20,27 @@ function RestaurantReviews ({restaurants}) {
       }
   }, [place_id])
       return (
-        <table>
-          <thead>
+        <table className="overall-div">
+          <thead className="header-container">
             <tr>
-              <th>
+              <th >
                 Name
               </th>
               <th>
                 Rating
               </th>
               <th>
-                Text
+                Review
               </th>
             </tr>
           </thead>
-            <tbody>
+            <tbody className="review-box">
               {reviewData.map((review, idx) =>
               <tr key={idx}>
                 <td>{review.name}</td>
+                
                 <td>{review.rating}</td>
-                <td>{review.text}</td>
+                <td style={{textAlign: "justify"}}>{review.text}</td>
               </tr>)}
             </tbody>
         </table>
