@@ -73,3 +73,9 @@
   width: 50%;
   float:right;
 }
+
+.links {
+  text-decoration: none;
+  text-shadow: 1px 2px rgb(125, 128, 164);
+  color: white;
+}
